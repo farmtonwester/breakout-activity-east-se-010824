@@ -81,6 +81,20 @@ console.log("------------------------");
 
   // 1️⃣ Given "pokemon" and "pokeContainer" above, create a function (renderPokemon) that:
 
+  function renderPokemon(pokemonObject) {
+	const pokeCard = document.createElement('div')
+	pokeCard.id = `poke-${pokemonObject.id}`;
+	pokeCard.className = "poke-card";
+
+	const pokeImg = document.createElement('img');
+	pokeImg.src = pokemonObject.img;
+	pokeImg.alt = `${pokemonObject.name} image`;
+
+	const pokeName = document.createElement('h3');
+	pokeName.textContent = pokemonObject.name;
+	pokeCard.append(pokeImg, pokeName);
+	pokeContainer.append(pokeCard);
+  }
 	//  ✔️ Accepts a single "pokemon" object
  
  	//  ✔️ Creates a "div" element to contain information about each Pokemon and stores the "div" in a variable (pokeCard)
@@ -107,12 +121,12 @@ console.log("------------------------");
 
 
 
-	// ✅ Check Answer: 
-	// function init() {
-	// 	pokemon.forEach(renderPokemon);
-	// }
+	//✅ Check Answer: 
+	function init() {
+		pokemon.forEach(renderPokemon);
+	}
 
-	// init();
+	init();
 
 // 🚧 Break Out Activity 2: Creating / Reading / Updating Elements
 
